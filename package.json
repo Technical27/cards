@@ -1,18 +1,11 @@
 {
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.2.0",
-    "nodemon": "^1.19.2"
-  },
   "scripts": {
-    "test": "mocha",
-    "start": "nodemon ."
+    "start": "next",
+    "build": "next build"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
-    "express": "^4.17.1",
     "next": "^9.0.5",
-    "node-fetch": "^2.6.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }
