@@ -8,7 +8,7 @@
   height: 46%;
   min-height: 240px;
   margin: 0.5% 1%;
-  border: 0.2rem solid black;
+  border: 0.2rem solid #00041c;
   border-radius: 1.2rem;
   box-shadow: 0.4rem 0.4rem 0.5rem rgba(247, 254, 255, 0.2);
   background-color: #f7feff;
@@ -47,18 +47,18 @@
 
 .name {
   word-break: break-word;
-  height: 16%;
+  height: 19%;
   font-size: 2.3vh;
 }
 
 .color {
   height: 46%;
-  width: 46%;
+  width: 21%;
   margin: 2%;
 }
 
 .color.selected {
-  outline: thick solid black;
+  outline: thick solid #212100;
 }
 
 .colors {
@@ -66,7 +66,7 @@
   width: 94%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
 }
 
