@@ -1,0 +1,93 @@
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: stretch;
+  width: 22.4%;
+  min-width: 270px;
+  height: 46%;
+  min-height: 240px;
+  margin: 0.5% 1%;
+  border: 0.2rem solid black;
+  border-radius: 1.2rem;
+  box-shadow: 0.4rem 0.4rem 0.5rem rgba(247, 254, 255, 0.2);
+  background-color: #f7feff;
+}
+
+.name:focus, .body:focus {
+  outline: none;
+}
+
+.sep {
+  background-color: black;
+  height: 1%;
+  /* with 100% it leaves a small gap */
+  width: 100.1%;
+}
+
+.body, .name {
+  margin: 3%;
+  width: 94%;
+  resize: none;
+  overflow: hidden;
+  background-color: #f7feff;
+}
+
+.body {
+  font-size: 2.2vh;
+  height: 100%;
+}
+
+.settings {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.name {
+  word-break: break-word;
+  height: 16%;
+  font-size: 2.3vh;
+}
+
+.color {
+  height: 46%;
+  width: 46%;
+  margin: 2%;
+}
+
+.color.selected {
+  outline: thick solid black;
+}
+
+.colors {
+  height: 30%;
+  width: 94%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+button {
+  font-size: 2.2vh;
+  padding: 1%;
+  border: 0.1rem solid black;
+  border-radius: 0.3rem;
+  background-color: #f7feff;
+  margin: 1%;
+  outline: none;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    width: 46.4%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 96.6%;
+  }
+}

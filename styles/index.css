@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: 'Source Code Pro', sans-serif;
+}
+
+#main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #394557;
+}
+
+#cards {
+  align-self: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: auto;
+}
+
+html, body, div#__next, #main, #cards {
+  height: 100%;
+  width: 100%;
+}
