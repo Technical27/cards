@@ -41,8 +41,17 @@
 .settings {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
+}
+
+.buttons {
+  width: 94%;
+  height: 40%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .name {
@@ -52,9 +61,9 @@
 }
 
 .color {
-  height: 46%;
+  height: 40%;
   width: 21%;
-  margin: 2%;
+  margin: 1%;
 }
 
 .color.selected {
@@ -62,7 +71,7 @@
 }
 
 .colors {
-  height: 30%;
+  height: 40%;
   width: 94%;
   display: flex;
   flex-flow: row wrap;

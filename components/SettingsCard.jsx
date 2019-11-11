@@ -15,7 +15,9 @@ const SettingsCard = props => {
       <span className='name'>Settings</span>
       <span className='sep' />
       <div className='body settings'>
-        <button onClick={addCard}>Add Card</button>
+        <div className='buttons'>
+          <button onClick={addCard}>Add Card</button>
+        </div>
         <div className='colors'>
           {createColor('#ff4242')}
           {createColor('#53a3ff')}
