@@ -17,6 +17,6 @@ const TaskCard = React.forwardRef((props, ref) => {
   );
 });
 
-TaskCard.defaultProps = {color: 'black', body: '', name: ''};
+TaskCard.defaultProps = {color: '#00041c', body: '', name: ''};
 
 export default TaskCard;
