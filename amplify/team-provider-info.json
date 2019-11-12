@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-cards-dev-164037-authRole",
+            "UnauthRoleArn": "arn:aws:iam::781524856010:role/amplify-cards-dev-164037-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::781524856010:role/amplify-cards-dev-164037-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-cards-dev-164037-deployment",
+            "UnauthRoleName": "amplify-cards-dev-164037-unauthRole",
+            "StackName": "amplify-cards-dev-164037",
+            "StackId": "arn:aws:cloudformation:us-east-1:781524856010:stack/amplify-cards-dev-164037/df7e25c0-04cb-11ea-90c6-0e6b90c5010d"
+        },
+        "categories": {
+            "auth": {
+                "cardsb3be60c1": {}
+            }
+        }
+    }
+}
