@@ -19,7 +19,7 @@
 }
 
 .sep {
-  background-color: black;
+  background-color: #00041c;
   height: 1%;
   /* with 100% it leaves a small gap */
   width: 100.1%;
@@ -82,7 +82,7 @@
 button {
   font-size: 2.2vh;
   padding: 1%;
-  border: 0.1rem solid black;
+  border: 0.1rem solid #00041c;
   border-radius: 0.3rem;
   background-color: #f7feff;
   margin: 1%;
