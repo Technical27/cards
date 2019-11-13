@@ -5,7 +5,12 @@ import Amplify from '@aws-amplify/core';
 import awsconfig from '../aws-exports';
 Amplify.configure(awsconfig);
 
-class App extends NextApp {
+interface NextProps {
+  Component: React.Component,
+  props: any
+}
+
+class App extends NextApp<NextProps> {
   render () {
     const {Component, props} = this.props;
     return (<Component {...props} />);

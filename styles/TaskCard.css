@@ -67,7 +67,7 @@
 }
 
 .color.selected {
-  outline: thick solid #212100;
+  outline: 0.15rem dashed #212100;
 }
 
 .colors {

@@ -1,18 +1,15 @@
 import React, {useState} from 'react';
 import Auth from '@aws-amplify/auth';
 import Router from 'next/router';
+import Link from 'next/link';
 import '../styles/signin.css';
 
-const login = (username, password) => e => {
+const login = (username: string, password: string) => e => {
   e.preventDefault();
   if (username && password) {
     Auth.signIn(username, password)
       .then(user => {
-        console.log(user);
         if (!user.challengeName) Router.push({pathname: '/'});
-        else if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
-          Auth.completeNewPassword(user, 'dankmemes', {email: 'aamaruvi@gmail.com'});
-        }
       })
       .catch(err => console.error(err));
   }
@@ -20,7 +17,7 @@ const login = (username, password) => e => {
 
 
 const SignIn = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   return (
@@ -28,16 +25,17 @@ const SignIn = () => {
       <div className='card'>
         <span className='name'>Sign in</span>
         <span className='sep'/>
-        <form onSubmit={login(email, password)} className='body'>
+        <form onSubmit={login(username, password)} className='body'>
           <div className='input'>
             <span>email:</span>
-            <input type='text' id='email' onChange={({target}) => setEmail(target.value)} value={email} autoComplete='email' />
+            <input type='text' id='email' onChange={({target}) => setUsername(target.value)} value={username} autoComplete='username' />
           </div>
           <div className='input'>
             <span>password:</span>
             <input type='password' id='password' onChange={({target}) => setPassword(target.value)} value={password} autoComplete='current-password' />
           </div>
-          <input type='submit' value='login' disabled={!(email && password && password.length >= 6)} />
+          <input type='submit' value='login' disabled={!(username && password && password.length >= 6)} />
+          <Link href='/'>Back to main page</Link>
         </form>
       </div>
     </div>
