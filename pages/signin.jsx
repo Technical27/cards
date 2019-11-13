@@ -1,15 +1,21 @@
 import React, {useState} from 'react';
 import Auth from '@aws-amplify/auth';
+import Router from 'next/router';
+import '../styles/signin.css';
 
-const login = (email, password) => e => {
+const login = (username, password) => e => {
   e.preventDefault();
-  Auth.signIn(email, password)
-    .then(user => {
-      console.log(user);
-      if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
-      }
-    })
-    .catch(err => console.error(err));
+  if (username && password) {
+    Auth.signIn(username, password)
+      .then(user => {
+        console.log(user);
+        if (!user.challengeName) Router.push({pathname: '/'});
+        else if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
+          Auth.completeNewPassword(user, 'dankmemes', {email: 'aamaruvi@gmail.com'});
+        }
+      })
+      .catch(err => console.error(err));
+  }
 }
 
 
@@ -19,11 +25,21 @@ const SignIn = () => {
 
   return (
     <div id='main'>
-      <form onSubmit={login(email, password)}>
-        <input type='text' id='email' onChange={({target}) => setEmail(target.value)} value={email} autoComplete='email' />
-        <input type='password' id='password' onChange={({target}) => setPassword(target.value)} value={password} autoComplete='current-password' />
-        <input type='submit' value='login'/>
-      </form>
+      <div className='card'>
+        <span className='name'>Sign in</span>
+        <span className='sep'/>
+        <form onSubmit={login(email, password)} className='body'>
+          <div className='input'>
+            <span>email:</span>
+            <input type='text' id='email' onChange={({target}) => setEmail(target.value)} value={email} autoComplete='email' />
+          </div>
+          <div className='input'>
+            <span>password:</span>
+            <input type='password' id='password' onChange={({target}) => setPassword(target.value)} value={password} autoComplete='current-password' />
+          </div>
+          <input type='submit' value='login' disabled={!(email && password && password.length >= 6)} />
+        </form>
+      </div>
     </div>
   );
 };

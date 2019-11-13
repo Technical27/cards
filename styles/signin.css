@@ -1,0 +1,109 @@
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: stretch;
+  width: 22.4%;
+  min-width: 270px;
+  height: 46%;
+  min-height: 240px;
+  margin: 0.5% 1%;
+  border: 0.2rem solid #00041c;
+  border-radius: 1.2rem;
+  box-shadow: 0.4rem 0.4rem 0.5rem rgba(247, 254, 255, 0.2);
+  background-color: #f7feff;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    width: 46.4%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 96.6%;
+  }
+}
+
+#main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #394557;
+}
+
+.sep {
+  background-color: #00041c;
+  height: 1%;
+  /* with 100% it leaves a small gap */
+  width: 100.1%;
+}
+
+.name {
+  word-break: break-word;
+  height: 19%;
+  font-size: 4.6vh;
+}
+
+.body {
+  font-size: 2.2vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+input {
+  font-size: 1.8vh;
+  border: 0.1rem solid #00041c;
+  border-radius: 0.3rem;
+  background-color: #f7feff;
+  width: 60%;
+}
+
+input[type=submit] {
+  font-size: 2.2vh;
+  padding: 1%;
+  border: 0.1rem solid #00041c;
+  border-radius: 0.3rem;
+  background-color: #f7feff;
+  margin: 1%;
+  width: 30%;
+  outline: none;
+}
+
+.input {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 94%;
+  margin: 1%;
+  font-size: 2.1vh;
+}
+
+.body, .name {
+  margin: 3%;
+  width: 94%;
+  resize: none;
+  overflow: hidden;
+  background-color: #f7feff;
+}
+
+html, body, div#__next, #main, #cards {
+  height: 100%;
+  width: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: 'Source Code Pro', sans-serif;
+}
+
