@@ -4,6 +4,8 @@ import Router from 'next/router';
 import Link from 'next/link';
 import '../styles/signin.css';
 
+const colors = ['#ff4242', '#53a3ff', '#4aff36', '#00041c', '#ff8f2e', '#b44eff', '#ffd752'];
+
 const login = (username: string, password: string) => e => {
   e.preventDefault();
   if (username && password) {
@@ -15,13 +17,16 @@ const login = (username: string, password: string) => e => {
   }
 }
 
-
 const SignIn = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [background, setBackground] = useState();
+
+  if (!background) setBackground(colors[Math.floor(Math.random() * 7)]);
 
   return (
     <div id='main'>
+      <span className='background' style={{backgroundImage: `linear-gradient(-60deg, white, ${background})`}}/>
       <div className='card'>
         <span className='name'>Sign in</span>
         <span className='sep'/>

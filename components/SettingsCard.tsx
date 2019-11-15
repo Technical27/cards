@@ -5,9 +5,11 @@ import Link from 'next/link';
 
 export const SettingsContext = React.createContext(null);
 
-const createColor = color => {
+const colors = ['#ff4242', '#53a3ff', '#4aff36', '#00041c', '#ff8f2e', '#b44eff', '#ffd752'];
+
+const createColor = (color: string, index: number) => {
   const {changeColor, color: c} = useContext(SettingsContext);
-  return (<div className={c === color ? 'color selected' : 'color'} style={{backgroundColor: color}} onClick={() => changeColor({color})} />);
+  return (<div key={index} className={c === color ? 'color selected' : 'color'} style={{backgroundColor: color}} onClick={() => changeColor({color})} />);
 };
 
 const signOut = setUser => () => {
@@ -39,13 +41,7 @@ const SettingsCard = () => {
           {user ? (<button onClick={signOut(setUser)}>Sign Out</button>) : (<Link href='/signin'><button>Sign In</button></Link>)}
         </div>
         <div className='colors'>
-          {createColor('#ff4242')}
-          {createColor('#53a3ff')}
-          {createColor('#4aff36')}
-          {createColor('#00041c')}
-          {createColor('#ff8f2e')}
-          {createColor('#b44eff')}
-          {createColor('#ffd752')}
+          {colors.map(createColor)}
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 .card {
+  z-index: 2;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -32,6 +33,7 @@
   align-items: center;
   justify-content: center;
   background-color: #394557;
+  overflow: hidden;
 }
 
 .sep {
@@ -107,3 +109,11 @@ html, body, div#__next, #main, #cards {
   font-family: 'Source Code Pro', sans-serif;
 }
 
+.background {
+  -webkit-clip-path: polygon(70% 0%, 100% 0, 100% 100%, 90% 100%);
+  clip-path: polygon(70% 0%, 100% 0, 100% 100%, 90% 100%);
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
