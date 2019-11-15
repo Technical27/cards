@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Auth from '@aws-amplify/auth';
 import Router from 'next/router';
 import Link from 'next/link';
+import 'normalize.css/normalize.css';
 import '../styles/signin.css';
 
 const colors = ['#ff4242', '#53a3ff', '#4aff36', '#00041c', '#ff8f2e', '#b44eff', '#ffd752'];

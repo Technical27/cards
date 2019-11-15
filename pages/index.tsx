@@ -1,6 +1,7 @@
 import React, {useReducer, useEffect} from 'react';
 import TaskCard from '../components/TaskCard';
 import SettingsCard, {SettingsContext} from '../components/SettingsCard';
+import 'normalize.css/normalize.css';
 import '../styles/index.css';
 
 const addCardReducer = (cards: React.Component[], action) => {
