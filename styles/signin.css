@@ -95,7 +95,7 @@ input[type=submit] {
   background-color: #f7feff;
 }
 
-html, body, div#__next, #main, #cards {
+html, body, div#__next, #main {
   height: 100%;
   width: 100%;
 }
@@ -110,10 +110,10 @@ html, body, div#__next, #main, #cards {
 }
 
 .background {
-  -webkit-clip-path: polygon(70% 0%, 100% 0, 100% 100%, 90% 100%);
-  clip-path: polygon(70% 0%, 100% 0, 100% 100%, 90% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 52% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 52% 100%);
   position: absolute;
   right: 0;
   height: 100%;
-  width: 100%;
+  width: 30%;
 }
