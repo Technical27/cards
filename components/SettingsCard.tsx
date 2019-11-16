@@ -37,8 +37,8 @@ const SettingsCard = () => {
       <span className='sep' />
       <div className='body settings'>
         <div className='buttons'>
-          <button onClick={() => addCard({color})}>Add Card</button>
-          {user ? (<button onClick={signOut(setUser)}>Sign Out</button>) : (<Link href='/signin'><button>Sign In</button></Link>)}
+          <button className='setting' onClick={() => addCard({color})}>Add Card</button>
+          {user ? (<button className='setting' onClick={signOut(setUser)}>Sign Out</button>) : (<Link href='/signin'><button className='setting'>Sign In</button></Link>)}
         </div>
         <div className='colors'>
           {colors.map(createColor)}
