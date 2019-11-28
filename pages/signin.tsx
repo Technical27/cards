@@ -5,6 +5,10 @@ import Link from 'next/link';
 import 'normalize.css/normalize.css';
 import '../styles/signin.css';
 
+import Amplify from '@aws-amplify/core';
+import awsconfig from '../aws-exports';
+Amplify.configure(awsconfig);
+
 const colors = ['#ff4242', '#53a3ff', '#4aff36', '#00041c', '#ff8f2e', '#b44eff', '#ffd752'];
 
 const login = (username: string, password: string) => e => {
@@ -13,6 +17,7 @@ const login = (username: string, password: string) => e => {
     Auth.signIn(username, password)
       .then(user => {
         if (!user.challengeName) Router.push({pathname: '/'});
+        else console.log(`Challenge name: ${user.challengeName}`);
       })
       .catch(err => console.error(err));
   }
@@ -41,6 +46,7 @@ const SignIn = () => {
             <input type='password' id='password' onChange={({target}) => setPassword(target.value)} value={password} autoComplete='current-password' />
           </div>
           <input type='submit' value='login' disabled={!(username && password && password.length >= 6)} />
+          <Link href='/signup'>Don't have an account? sign up</Link>
           <Link href='/'>Back to main page</Link>
         </form>
       </div>

@@ -1,12 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
-
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  font-family: 'Source Code Pro', sans-serif;
-}
-
 #main {
   display: flex;
   flex-flow: column nowrap;
@@ -24,7 +15,7 @@
   overflow: auto;
 }
 
-html, body, div#__next, #main, #cards {
+#cards {
   height: 100%;
   width: 100%;
 }

@@ -9,7 +9,7 @@ const colors = ['#ff4242', '#53a3ff', '#4aff36', '#00041c', '#ff8f2e', '#b44eff'
 
 const createColor = (color: string, index: number) => {
   const {changeColor, color: c} = useContext(SettingsContext);
-  return (<div key={index} className={c === color ? 'color selected' : 'color'} style={{backgroundColor: color}} onClick={() => changeColor({color})} />);
+  return (<div key={index} className={c === color ? 'color selected' : 'color'} id={'color-'+color} style={{backgroundColor: color}} onClick={() => changeColor({color})} />);
 };
 
 const signOut = setUser => () => {
@@ -37,7 +37,7 @@ const SettingsCard = () => {
       <span className='sep' />
       <div className='body settings'>
         <div className='buttons'>
-          <button className='setting' onClick={() => addCard({color})}>Add Card</button>
+          <button className='setting' id='addCard' onClick={() => addCard({color})}>Add Card</button>
           {user ? (<button className='setting' onClick={signOut(setUser)}>Sign Out</button>) : (<Link href='/signin'><button className='setting'>Sign In</button></Link>)}
         </div>
         <div className='colors'>

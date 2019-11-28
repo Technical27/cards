@@ -2,7 +2,12 @@ import React, {useReducer, useEffect} from 'react';
 import TaskCard from '../components/TaskCard';
 import SettingsCard, {SettingsContext} from '../components/SettingsCard';
 import 'normalize.css/normalize.css';
+import '../styles/common.css';
 import '../styles/index.css';
+
+import Amplify from '@aws-amplify/core';
+import awsconfig from '../aws-exports';
+Amplify.configure(awsconfig);
 
 const addCardReducer = (cards: React.Component[], action) => {
   const ref = React.createRef();
@@ -12,11 +17,11 @@ const addCardReducer = (cards: React.Component[], action) => {
 
 const handleClick = ((cards, color, changeColor) => ({target}) => {
   const id = target.getAttribute('id') || target.parentNode.getAttribute('id');
-  if (id) {
-    const matches = id.match(/card-([0-9]+)/);
-    if (matches) cards[matches[1]].ref.current.changeColor(color);
+  if (/card-([0-9]+)/.test(id)) {
+    const [, card] = id.match(/card-([0-9]+)/);
+    cards[card].ref.current.changeColor(color);
   }
-  changeColor({color: null});
+  else if (typeof id === 'undefined' || id !== 'addCard' || target.className.includes('color')) changeColor({color: null});
 });
 
 const colorReducer = (cur, {color}) => {

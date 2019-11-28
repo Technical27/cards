@@ -7,7 +7,7 @@
   min-width: 270px;
   height: 46%;
   min-height: 240px;
-  margin: 0.5% 1%;
+  margin: 0.7% 1%;
   border: 0.2rem solid #00041c;
   border-radius: 1.2rem;
   box-shadow: 0.4rem 0.4rem 0.5rem rgba(247, 254, 255, 0.2);
@@ -34,7 +34,7 @@
 }
 
 .body {
-  font-size: 2.2vh;
+  font-size: 2.2vmin;
   height: 100%;
 }
 
@@ -57,7 +57,7 @@
 .name {
   word-break: break-word;
   height: 19%;
-  font-size: 2.3vh;
+  font-size: 2.3vmin;
 }
 
 .color {
@@ -80,7 +80,7 @@
 }
 
 .setting {
-  font-size: 2.2vh;
+  font-size: 2.2vmin;
   padding: 1%;
   margin: 0 1%;
   border: 0.1rem solid #00041c;
@@ -98,5 +98,14 @@
 @media (max-width: 600px) {
   .card {
     width: 96.6%;
+  }
+  .name {
+    font-size: 14px;
+  }
+  .body {
+    font-size: 13px;
+  }
+  .setting {
+    font-size: 13px;
   }
 }
